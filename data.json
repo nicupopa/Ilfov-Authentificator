@@ -1,0 +1,17 @@
+{
+    "database": [
+      {
+        "url": "https://example1.com",
+        "credentials": [
+          {"username": "user1", "password": "password1"},
+          {"username": "user2", "password": "password2"}
+        ]
+      },
+      {
+        "url": "https://example2.com",
+        "credentials": [
+          {"username": "user3", "password": "password3"}
+        ]
+      }
+    ]
+  }
