@@ -1,16 +1,40 @@
+
 {
     "manifest_version": 2,
-    "name": "Simple Extension",
+    "name": "Your Extension Name",
     "version": "1.0",
-    "description": "A basic Chrome extension",
+    "description": "Your extension description",
     "browser_action": {
+      "default_popup": "popup.html",
       "default_icon": {
         "16": "icon.png",
         "48": "icon.png",
         "128": "icon.png"
-      },
-      "default_popup": "popup.html",
-      "default_title": "Click me!"
+      }
     },
-    "permissions": ["activeTab"]
+    "permissions": [
+      "storage"
+    ],
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "web_accessible_resources": [
+      "popup.html",
+      "popup.js"
+    ],
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self';"
+    }
   }

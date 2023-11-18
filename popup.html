@@ -1,15 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Simple Extension</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extension Popup</title>
   <style>
+    .slide {
+      display: none;
+    }
+
+    .visible {
+      display: block;
+    }
+
     body {
-      width: 200px;
-      text-align: center;
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+
+    input {
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 8px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h3>Hello, this is a simple extension!</h3>
+  <!-- Initial Slide with Two Buttons -->
+  <div id="initialSlide" class="slide visible">
+    <h2>Welcome!</h2>
+    <button id="addEntryBtn">Add Entry</button>
+    <button id="selectUserBtn">Select User</button>
+  </div>
+
+  <!-- Add Entry Slide -->
+  <div id="addEntrySlide" class="slide">
+    <h2>Add Entry</h2>
+    <label for="url">URL:</label>
+    <input type="text" id="url" placeholder="Enter URL">
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter username">
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Enter password">
+    <input type="checkbox" id="showPassword"> Show Password
+    <button id="addEntry">Add Entry</button>
+  </div>
+
+  <!-- Update Password Slide -->
+  <div id="updatePasswordSlide" class="slide">
+    <h2>Update Password</h2>
+    <label for="oldPassword">Old Password:</label>
+    <input type="password" id="oldPassword" placeholder="Enter old password">
+    <label for="newPassword">New Password:</label>
+    <input type="password" id="newPassword" placeholder="Enter new password">
+    <input type="checkbox" id="showNewPassword"> Show Password
+    <button id="updatePasswordBtn">Update Password</button>
+  </div>
+
+  <!-- Select User Slide -->
+  <div id="selectUserSlide" class="slide">
+    <h2>Select User</h2>
+    <!-- Dynamically populate this section with user names -->
+    <ul id="userList"></ul>
+  </div>
+
+  <!-- Login or Update Password Slide -->
+  <div id="loginUpdateSlide" class="slide">
+    <h2>Login or Update Password</h2>
+    <button id="loginBtn">Login</button>
+    <button id="updatePasswordRedirectBtn">Update Password</button>
+  </div>
+
+  <script src="popup.js"></script>
 </body>
 </html>
