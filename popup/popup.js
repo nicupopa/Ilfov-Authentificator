@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
             chrome.storage.local.set({ 'myExtensionData': data }, function () {
                 console.log('Data saved to storage');
             });
-        } else {
-            // console.error('Error: chrome.storage.local is not available');
         }
     }
 
@@ -68,6 +66,22 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('addEntryBtn').addEventListener('click', function () {
         showSlide('addEntrySlide');
     });
+
+    document.getElementById("goBack").addEventListener('click', function () {
+        showSlide('initialSlide');
+    })
+
+    document.getElementById("goBack1").addEventListener('click', function () {
+        showSlide('initialSlide');
+    })
+
+    document.getElementById("goBack2").addEventListener('click', function () {
+        showSlide('selectUserSlide');
+    })
+
+    document.getElementById("goBack3").addEventListener('click', function () {
+        showSlide('loginUpdateSlide');
+    })
 
     document.getElementById('addEntry').addEventListener('click', function () {
         var url = document.getElementById('url').value;
@@ -136,7 +150,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log('Data updated from storage:', data);
             }
         });
-    } else {
+    } 
+    else {
         // console.error('Error: chrome.storage.local is not available');
     }
 });
