@@ -3,34 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css" />
   <title>BetterLogIn</title>
-  <style>
-    .slide {
-      display: none;
-    }
-
-    .visible {
-      display: block;
-    }
-
-    body {
-      width: 300px;
-      padding: 15px;
-      font-family: Arial, sans-serif;
-    }
-
-    input {
-      margin-bottom: 10px;
-    }
-
-    button {
-      padding: 8px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
+  
 </head>
 <body>
   <!-- Initial Slide with Two Buttons -->
@@ -51,7 +26,7 @@
     <input type="password" id="password" placeholder="Enter password">
     <input type="checkbox" id="showPassword"> Show Password
     <button id="addEntry">Add Entry</button>
-    <button id="goBack">Back</button>
+    <button style="margin-left: 170px;" id="goBack">Back</button>
   </div>
 
   <!-- Update Password Slide -->
@@ -63,7 +38,7 @@
     <input type="password" id="newPassword" placeholder="Enter new password">
     <input type="checkbox" id="showNewPassword"> Show Password
     <button id="updatePasswordBtn">Update Password</button>
-    <button id="goBack3">Back</button>
+    <button style="margin-left: 70px;" id="goBack3">Back</button>
   </div>
 
   <!-- Select User Slide -->
@@ -71,7 +46,7 @@
     <h2>Select User</h2>
     <!-- Dynamically populate this section with user names -->
     <ol id="userList"></ol>
-    <button id="goBack1">Back</button>
+    <button style="margin-left: 250px;" id="goBack1">Back</button>
   </div>
 
   <!-- Login or Update Password Slide -->
@@ -79,7 +54,7 @@
     <h2>Login or Update Password</h2>
     <button id="loginBtn">Login</button>
     <button id="updatePasswordRedirectBtn">Update Password</button>
-    <button id="goBack2">Back</button>
+    <button style="margin-left: 73px;" id="goBack2">Back</button>
   </div>
 
   <script src="popup.js"></script>
