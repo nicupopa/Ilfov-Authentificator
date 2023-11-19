@@ -6,25 +6,19 @@ var objPeople = [
   // ... (other users)
 ];
 
-function getInfo() {
-  var username = document.getElementById('username').value;
-  var password = document.getElementById('password').value;
+function getInfo(username, password) {
 
-  for (var i = 0; i < objPeople.length; i++) {
-    if (username == objPeople[i].username && password == objPeople[i].password) {
-      // Save a log in localStorage
-      saveLog(username + " logged in");
-      console.log(username + " e bazat");
+  const user = userCredentials.find(
+    cred => objPeople.username === username && objPeople.password === password
+  );
 
-      // Redirect to page2.html
-      window.location.href = "2.html";
-      return;
-    }
+  if (user) {
+    // Redirect to the next page upon successful login
+    window.location.href = '2.html'; // Replace 'next_page_url' with the URL of the next page
+  } else {
+    // Handle incorrect credentials or display an error message
+    alert('Invalid username or password. Please try again.');
   }
-
-  console.log("waaaaaaa");
-  // Redirect to page2.html even if the credentials are incorrect (for demonstration purposes)
-  window.location.href = "2.html";
 }
 
 function saveLog(logEntry) {

@@ -18,13 +18,21 @@
   <!-- Add Entry Slide -->
   <div id="addEntrySlide" class="slide">
     <h2>Add Entry</h2>
-    <label for="url">URL:</label>
-    <input type="text" id="url" placeholder="Enter URL">
-    <label for="username">Username:</label>
-    <input type="text" id="username" placeholder="Enter username">
-    <label for="password">Password:</label>
-    <input type="password" id="password" placeholder="Enter password">
-    <input type="checkbox" id="showPassword"> Show Password
+    <label for="url" style="font-size: medium;">URL:</label>
+    <input type="text" id="url" style="padding: 2px;" placeholder="Enter URL">
+    <br>
+    <label for="username" style="font-size: medium;">Username:</label>
+    <input type="text" id="username" style="padding: 2px;" placeholder="Enter username">
+    <br>
+    <label for="password" style="font-size: medium;">Password:</label>
+    <input type="password" id="password" style="padding: 2px;" placeholder="Enter password">
+    <br>
+    <div>
+      <label for="show" style="font-size:small;">Show Password</label>
+      <input type="checkbox" style="font-size: small;" id="showPassword"></input>
+    </div>
+    
+    <br>
     <button id="addEntry">Add Entry</button>
     <button style="margin-left: 170px;" id="goBack">Back</button>
   </div>
@@ -32,13 +40,16 @@
   <!-- Update Password Slide -->
   <div id="updatePasswordSlide" class="slide">
     <h2>Update Password</h2>
-    <label for="oldPassword">Old Password:</label>
+    <label for="oldPassword" style="font-size: medium;">Old Password:</label>
     <input type="password" id="oldPassword" placeholder="Enter old password">
-    <label for="newPassword">New Password:</label>
+    <label for="newPassword" style="font-size: medium;">New Password:</label>
     <input type="password" id="newPassword" placeholder="Enter new password">
-    <input type="checkbox" id="showNewPassword"> Show Password
+    <div>
+      <label for="show" style="font-size:small;">Show Password</label>
+      <input type="checkbox" id="showNewPassword">
+    </div>
     <button id="updatePasswordBtn">Update Password</button>
-    <button style="margin-left: 70px;" id="goBack3">Back</button>
+    <button style="margin-left: 120px;" id="goBack3">Back</button>
   </div>
 
   <!-- Select User Slide -->
