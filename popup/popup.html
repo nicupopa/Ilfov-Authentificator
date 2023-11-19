@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>BetterLogIn</title>
+  
+</head>
+<body>
+  <!-- Initial Slide with Two Buttons -->
+  <div id="initialSlide" class="slide visible">
+    <h2>Welcome!</h2>
+    <button id="addEntryBtn">Add Entry</button>
+    <button id="selectUserBtn">Select User</button>
+  </div>
+
+  <!-- Add Entry Slide -->
+  <div id="addEntrySlide" class="slide">
+    <h2>Add Entry</h2>
+    <label for="url" style="font-size: medium;">URL:</label>
+    <input type="text" id="url" style="padding: 2px;" placeholder="Enter URL">
+    <br>
+    <label for="username" style="font-size: medium;">Username:</label>
+    <input type="text" id="username" style="padding: 2px;" placeholder="Enter username">
+    <br>
+    <label for="password" style="font-size: medium;">Password:</label>
+    <input type="password" id="password" style="padding: 2px;" placeholder="Enter password">
+    <br>
+    <div>
+      <label for="show" style="font-size:small;">Show Password</label>
+      <input type="checkbox" style="font-size: small;" id="showPassword"></input>
+    </div>
+    
+    <br>
+    <button id="addEntry">Add Entry</button>
+    <button style="margin-left: 170px;" id="goBack">Back</button>
+  </div>
+
+  <!-- Update Password Slide -->
+  <div id="updatePasswordSlide" class="slide">
+    <h2>Update Password</h2>
+    <label for="oldPassword" style="font-size: medium;">Old Password:</label>
+    <input type="password" id="oldPassword" placeholder="Enter old password">
+    <label for="newPassword" style="font-size: medium;">New Password:</label>
+    <input type="password" id="newPassword" placeholder="Enter new password">
+    <div>
+      <label for="show" style="font-size:small;">Show Password</label>
+      <input type="checkbox" id="showNewPassword">
+    </div>
+    <button id="updatePasswordBtn">Update Password</button>
+    <button style="margin-left: 120px;" id="goBack3">Back</button>
+  </div>
+
+  <!-- Select User Slide -->
+  <div id="selectUserSlide" class="slide">
+    <h2>Select User</h2>
+    <!-- Dynamically populate this section with user names -->
+    <ol id="userList"></ol>
+    <button style="margin-left: 250px;" id="goBack1">Back</button>
+  </div>
+
+  <!-- Login or Update Password Slide -->
+  <div id="loginUpdateSlide" class="slide">
+    <h2>Login or Update Password</h2>
+    <button id="loginBtn">Login</button>
+    <button id="updatePasswordRedirectBtn">Update Password</button>
+    <button style="margin-left: 73px;" id="goBack2">Back</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
