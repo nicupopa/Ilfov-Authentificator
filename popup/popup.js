@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     let data;
 
+    // Check if the current URL matches the desired link pattern
+    if (window.location.href === 'http://localhost:3000/example/main.html') {
+        chrome.browserAction.openPopup();
+    }
+
     function saveDataToStorage() {
         if (chrome.storage && chrome.storage.local) {
             chrome.storage.local.set({ 'myExtensionData': data }, function () {
@@ -156,8 +161,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.getElementById('loginBtn').addEventListener('click', function () {
-        // Placeholder for login functionality
-        console.log('Login button clicked. No action taken.');
+        document.querySelector('#usernameLogIn').value = 'da';
+        document.querySelector('#passwordLogIn').value = 'da';
         window.close();
     });
 
