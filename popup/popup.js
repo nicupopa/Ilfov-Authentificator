@@ -123,8 +123,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('loginBtn').addEventListener('click', function () {
         // Placeholder for login functionality
-        console.log('Login button clicked. No action taken.');
-        showSlide('initialSlide');
+        console.log('Login button clicked. Performing auto-fill.');
+        window.close();
     });
 
     document.getElementById('updatePasswordRedirectBtn').addEventListener('click', function () {
@@ -154,4 +154,6 @@ document.addEventListener('DOMContentLoaded', function () {
     else {
         // console.error('Error: chrome.storage.local is not available');
     }
+
+
 });

@@ -3,7 +3,6 @@ var objPeople = [
     username: "nicu",
     password: "mihaiteiubesc"
   },
-  // ... (other users)
 ];
 
 function getInfo() {
@@ -23,8 +22,6 @@ function getInfo() {
   }
 
   console.log("waaaaaaa");
-  // Redirect to page2.html even if the credentials are incorrect (for demonstration purposes)
-  window.location.href = "2.html";
 }
 
 function saveLog(logEntry) {
