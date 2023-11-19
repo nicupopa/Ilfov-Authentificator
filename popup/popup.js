@@ -9,6 +9,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+        let url = tabs[0].url;
+        updateUrlElement(url);
+        // use `url` here inside the callback because it's asynchronous!
+    });
+
+    function updateUrlElement(url) {
+        const urlElement = document.getElementById('url');
+        urlElement.value = url;
+    }
+
     function showSlide(slideId) {
         document.querySelectorAll('.slide').forEach(slide => {
             slide.classList.remove('visible');
@@ -44,6 +55,20 @@ document.addEventListener('DOMContentLoaded', function () {
         showSlide('initialSlide');
     }
 
+    function deleteEntry(password) {
+        
+        const index = database.findIndex(entry => entry.password === password);
+  
+        if (index !== -1) {
+          // If found, remove the entry from the database array
+          database.splice(index, 1);
+          console.log('Entry deleted successfully.');
+        } 
+        else {
+          console.log('Entry not found or password incorrect.');
+        }
+    }
+
     function updatePassword(url, username, oldPassword, newPassword) {
         if (!data || !data.hasOwnProperty('database')) {
             data = { database: [] };
@@ -64,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Button click event handlers
     document.getElementById('addEntryBtn').addEventListener('click', function () {
+    
         showSlide('addEntrySlide');
     });
 
@@ -81,6 +107,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById("goBack3").addEventListener('click', function () {
         showSlide('loginUpdateSlide');
+    })
+
+    document.getElementById("goBack4").addEventListener('click', function () {
+        showSlide('loginUpdateSlide');
+    })
+
+    document.getElementById('deleteUser').addEventListener('click', function () {
+        showSlide('deleteUserSlide');
     })
 
     document.getElementById('addEntry').addEventListener('click', function () {
@@ -108,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 userList.appendChild(listItem);
             });
         }
-
+        console.log('Entry deleted successfully.');
         showSlide('selectUserSlide');
     });
 
@@ -124,11 +158,17 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('loginBtn').addEventListener('click', function () {
         // Placeholder for login functionality
         console.log('Login button clicked. No action taken.');
-        showSlide('initialSlide');
+        window.close();
     });
 
     document.getElementById('updatePasswordRedirectBtn').addEventListener('click', function () {
         showSlide('updatePasswordSlide');
+    });
+
+    document.getElementById('deleteUserDone').addEventListener('click', function () {
+        var deletePassword = document.getElementById('deletePassword').value;
+        deleteEntry(deletePassword);
+        showSlide('selectUserSlide');
     });
 
     // Call the function to enable "Show Password" for password input fields
@@ -154,4 +194,5 @@ document.addEventListener('DOMContentLoaded', function () {
     else {
         // console.error('Error: chrome.storage.local is not available');
     }
+
 });
